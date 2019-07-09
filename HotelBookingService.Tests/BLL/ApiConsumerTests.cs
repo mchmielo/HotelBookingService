@@ -1,8 +1,8 @@
 using NUnit.Framework;
 
-namespace Tests
+namespace HotelBookingService.Tests.BLL
 {
-    public class Tests
+    public class ApiConsumerTests
     {
         [SetUp]
         public void Setup()
