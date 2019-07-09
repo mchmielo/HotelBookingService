@@ -13,9 +13,10 @@ namespace HotelBookingService.BLL
 
         public void SendMail(UserMailDto mailDto)
         {
-            SmtpClient client = new SmtpClient("SmtpServer");
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
             client.UseDefaultCredentials = false;
             client.Credentials = new NetworkCredential(mailDto.Username, mailDto.Password);
+            client.EnableSsl = true;
 
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("hotelbookingapi@hotelbookingapi.com");
